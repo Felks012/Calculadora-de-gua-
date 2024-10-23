@@ -73,8 +73,8 @@ button:hover {
     var horas = parseFloat(document.getElementById('horas').value);
     var acordado = 24 - horas
     var water = weight * 0.035;
-    document.getElementById('result').innerHTML = "Você deve beber " + water.toFixed(2) + " litros de água por dia. E "+ (water.toFixed(2)/acordado)*1000+ " ml de água por hora";
-}
+    agua_por_hora = (water/acordado)*1000;
+document.getElementById('result').innerHTML = "Você deve beber " + water.toFixed(2) + " litros de água por dia. E "+ agua_por_hora.toFixed(2)+ " ml de água por hora";
     </script>
        
 </head>
