@@ -6,7 +6,7 @@
     <title>Login e Criar Conta</title>
     <link rel="stylesheet" href="styles.css">
     <style type="text/css">
-body {
+      body {
     font-family: Arial, sans-serif;
     background-color: #f0f9f0;
     display: flex;
@@ -39,10 +39,10 @@ h1 {
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 4px;
     margin: 10px 0;
     border: 1px solid #4CAF50;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 button {
@@ -73,8 +73,28 @@ a {
 a:hover {
     text-decoration: underline;
 }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const loginContainer = document.getElementById('login-container');
+    const signupContainer = document.getElementById('signup-container');
+    
+    // Mostrar o formulário de login por padrão
+    loginContainer.classList.add('active');
 
-</style>
+    document.getElementById('switch-to-signup').addEventListener('click', function(e) {
+        e.preventDefault();
+        loginContainer.classList.remove('active');
+        signupContainer.classList.add('active');
+    });
+
+    document.getElementById('switch-to-login').addEventListener('click', function(e) {
+        e.preventDefault();
+        signupContainer.classList.remove('active');
+        loginContainer.classList.add('active');
+    });
+});
+    </script>
 </head>
 <body>
     <div class="container">
