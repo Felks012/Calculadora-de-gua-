@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
+    <style type="text/css">
+    .calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}    
+    
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Água</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+    function calculate() {
+    var weight = parseFloat(document.getElementById('weight').value);
+    if (isNaN(weight)) {
+        document.getElementById('result').innerHTML = "Por favor, insira um peso válido.";
+        return;
+
+    }
+    var horas = parseFloat(document.getElementById('horas').value);
+    var acordado = 24 - horas
+    var water = weight * 0.035;
+    agua_por_hora = (water/acordado)*1000;
+    document.getElementById('result').innerHTML = "Você deve beber " + water.toFixed(0) + " litros de água por dia. E "+ agua_por_hora.toFixed(0)+ " ml de água por hora";   
+}
+    </script>
+       
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculadora de Água</h2>
+        
+        <div class="input-group">
+            <label for="weight">Peso (kg):</label>
+            <input type="number" id="weight">
+            <label for="weight">Altura:</label>
+            <input type="number" id="altura">
+            <label for="weight">Horas de sono:</label>
+            <input type="number" id="horas">
+ 
+        </div>
+        <button onclick="calculate()">Calcular</button>
+        <div id="result"></div>
+    </div>
+    
+</body>
+</html>
